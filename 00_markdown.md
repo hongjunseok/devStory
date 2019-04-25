@@ -238,8 +238,8 @@ __double underscores__
 ![Alt text](/path/to/img.jpg)
 ![Alt text](/path/to/img.jpg "Optional title")
 ```
-![석촌호수 러버덕](http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0)
-![석촌호수 러버덕](http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0 "RubberDuck")
+![태극기](http://img.visualdive.co.kr/sites/2/2015/10/plag.jpg)
+![태극기](http://img.visualdive.co.kr/sites/2/2015/10/plag.jpg "The national flag of Korea is called the Taegukgi")
 
 사이즈 조절 기능은 없기 때문에 ```<img width="" height=""></img>```를 이용한다.
 
