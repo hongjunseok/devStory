@@ -237,10 +237,15 @@ __double underscores__
 ```
 ![Alt text](/path/to/img.jpg)
 ![Alt text](/path/to/img.jpg "Optional title")
+
 ```
 ![태극기](http://img.visualdive.co.kr/sites/2/2015/10/plag.jpg)
 ![태극기](http://img.visualdive.co.kr/sites/2/2015/10/plag.jpg "The national flag of Korea is called the Taegukgi")
 
-사이즈 조절 기능은 없기 때문에 ```<img width="" height=""></img>```를 이용한다.
 
+```
+위 형식에서는 이미지 사이즈 조절이 되지 않기 때문에
+<img src="링크" width="px or %" height="px or %"></img>를 사용한다.
+```
+<img src="http://img.visualdive.co.kr/sites/2/2015/10/plag.jpg" width="20%" height="20%"></img>
 ****
