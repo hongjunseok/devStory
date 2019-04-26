@@ -41,6 +41,9 @@ $ docker cp [머신이름:소스파일] [디렉토리]
 # 도커 머신으로 재접속하기
 $ docker attach [머신이름]
 
+# 도커 머신에서의 로그 확인
+# docker logs ${CONTAINER_ID}
+
 ```
 ## Install
 ```
