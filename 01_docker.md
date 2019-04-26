@@ -83,14 +83,18 @@ mysql       latest     d72169616e20        23 hours ago        443MB
 4. docker 이미지를 통해 mysql 컨테이너 생성
 
 ```
+//root에 패스워드
 $ docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=toor --name mysql_test mysql
+
+//만약 root에 패스워드를 넣지 않는다면
+$ docker run -d -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=true --name mysql_test mysql
 ```
 
-> root 계정의 패스워드 설정
-> -p 3306:3306 : 호스트의 3306포트와 컨테이너의 3306포트를 연결한다. 즉 호스트에 3306포트 접근이 발행하면 해당 컨테이너에 접속이 된다.
-> -e MYSQL_ROOT_PASSWORD=password : 컨테이너를 생성하면서 환경변수를 지정한다. root계정의 비밀번호를 설정한다.
-> -name mysql_test : 컨테이너의 이름은 mysql_test로 지정한다.
-> 만약 현재 로컬에서 사용중인 3306 mysql 이 있다면 머신이 동작하지 않기 때문에 포트를 달리 해준다.
+- root 계정의 패스워드 설정
+- -p 3306:3306 : 호스트의 3306포트와 컨테이너의 3306포트를 연결한다. 즉 호스트에 3306포트 접근이 발행하면 해당 컨테이너에 접속이 된다.
+- -e MYSQL_ROOT_PASSWORD=password : 컨테이너를 생성하면서 환경변수를 지정한다. root계정의 비밀번호를 설정한다.
+- -name mysql_test : 컨테이너의 이름은 mysql_test로 지정한다.
+- 만약 현재 로컬에서 사용중인 3306 mysql 이 있다면 머신이 동작하지 않기 때문에 포트를 달리 해준다.
 ```
 // 다음과 같이 하면 도커에 있는 mysql은 3307 포트로 접속하면 된다.
 $ docker run -d -p 3307:3306 -e MYSQL_ROOT_PASSWORD=toor --name mysql_test mysql
