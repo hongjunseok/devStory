@@ -105,7 +105,7 @@ $ docker run -d -p 3307:3306 -e MYSQL_ROOT_PASSWORD=toor --name mysql_test mysql
 
 5. docker 머신 확인
 ```
-// 모든 머신 확인 Status 가 날짜가 아니면 동작하지 않음.
+// 모든 머신 확인 Status 가 날짜가 아니면 동작하지 않음. or Up 34 minutes 로 나오면 동작중
 $ docker ps -a
 // 실행중인  머신 확인
 $ docker ps
