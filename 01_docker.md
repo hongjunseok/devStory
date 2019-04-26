@@ -136,8 +136,9 @@ mysql> show databases;
 ```
 
 7. Data Grip 또는 MYSQLWorkbench 를 통해 접속
+```
 > host: 127.0.0.1
 > port: 3306 //사용하고 있는 포트여서 3307과 같이 변경하였다면 3307
 > user id: docker run -d 시 만든 root
 > password: docker run -d [MYSQL_ROOT_PASSWORD] 로 지정한 toor
-
+```
