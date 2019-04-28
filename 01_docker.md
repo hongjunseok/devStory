@@ -149,3 +149,75 @@ mysql> show databases;
 > user id: docker run -d 시 만든 root
 > password: docker run -d [MYSQL_ROOT_PASSWORD] 로 지정한 toor
 ```
+
+
+### 2. 도커에 Node Application 이미지 만들어 실행
+1. Node App 준비
+```
+# localhost:3000 접속 시 기본 페이지 출력
+$ mkdir app
+$ npm i --g express-generator
+$ express express-example
+$ npm i
+$ npm start
+```
+
+2. Dockerfile 만들기
+> Dockerfile은 이미지 생성을 위한 배치파일과 같은 개념이다. 특정 이미지를 기준으로 새로운 이미지 구성에 필요한 명령어를 작성한 파일.
+> 파일 및 디렉토리 추가 / 환경 변수 설정 / 대상 이미지를 사용하여 컨테이너를 시작할 프로세스를 실행
+
+```
+$ cd /app
+$ touch Dockerfile
+$ vi Dockerfile
+```
+
+```
+# Dockerfile
+어떤 이미지로부터 새로운 이미지를 생성할지를 지정
+FROM node:10.15.3
+
+#Dockerfile 을 생성/관리하는 사람
+MAINTAINER Steven <steven@wepla.net>
+
+# /app 디렉토리 생성
+RUN mkdir -p /app
+# /app 디렉토리를 WORKDIR 로 설정
+WORKDIR /app
+# 현재 Dockerfile 있는 경로의 모든 파일을 /app 에 복사
+ADD . /app
+# npm install 을 실행
+RUN npm install
+
+#환경변수 NODE_ENV 의 값을 development 로 설정
+ENV NODE_ENV development
+
+#가상 머신에 오픈할 포트
+EXPOSE 3000 80
+
+#컨테이너에서 실행될 명령을 지정
+CMD ["npm", "start"]
+```
+
+3. 도커 이미지 생성 하여 실행
+```
+# docker build --tag [이미지명:태그명] [빌드대상 디렉토리]
+$ docker build --tag express:0.0.1 .
+
+# 이미지 생성 확인
+$ docker images
+
+# 모든 실행 이미지 확인
+$ docker ps -a
+
+# 이미지 생성
+$ docker create --name express_0 -p 3000:3000 express:0.0.1
+
+# 생성한 이미지를 docker에서 실행
+$ docker start express:0.0.1
+
+# 
+$ docker run --name express_1 -p 3000:3000 express:0.0.1
+```
+
+4. 
