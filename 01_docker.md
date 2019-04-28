@@ -216,7 +216,13 @@ $ docker create --name express_0 -p 3000:3000 express:0.0.1
 # 생성한 이미지를 docker에서 실행
 $ docker start express:0.0.1
 
-# docker 이미지를 지금 콘솔에서 실행
+# docker 이미지를 지금 콘솔에서 실행 Ctrl+C 시 종료
 $ docker run --name express_1 -p 3000:3000 express:0.0.1
+
+# docker 이미지 실행  docker stop [container id] 할때까지
+$ docker run -d --name express_2 -p 3000:3000 express:0.0.1
+
+# 생성한 이미지 삭제
+$ docker rm -f [NAMES]
 ```
 
