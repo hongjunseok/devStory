@@ -7,4 +7,8 @@
 `2019.04. `
   - 다른 계정의 github 이관 준비
   - 개발관련 블로그 정리
-  
+
+`2019.05 `
+  - docker-compose.yml 정리
+  - crawler 정리
+  - AWS 환상 구성
