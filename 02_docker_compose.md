@@ -128,6 +128,7 @@ echo "Deploy Success!"
 ```
 
 #### 실행
+> 실행하기 전에 원격 서버에 접속하여 빌드되는 디렉토리에 대해 권한을 열어 줘야 함
 ```
 $ bash script/deploy.sh
 ```
