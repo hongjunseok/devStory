@@ -11,4 +11,6 @@
 `2019.05 `
   - docker-compose.yml 정리
   - crawler 정리
-  - AWS 환상 구성
+  
+`2019.06. `
+  - github ssh key registry
